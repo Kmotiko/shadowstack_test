@@ -61,6 +61,7 @@ int *gc_alloc(){
   // can allocate?
   if(objects.size() >= MAX_OBJECT){
     // print objects before collect
+    std::cout << std::endl ;
     std::cout << "Print objects before collect" << std::endl ;
     for(auto &elem : objects){
       std::cout << *elem << std::endl ;
@@ -84,6 +85,7 @@ int *gc_alloc(){
   if(objects.size() < MAX_OBJECT){
     p = new int;
     objects.push_back(p);
+    std::cout << "[ALLOCATE PTR] " << p <<  " [OBJECT_NUM]" << objects.size() << std::endl ;
   }
 
   return p;
